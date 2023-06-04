@@ -1,0 +1,8 @@
+static header.component
+
+/home home.component
+
+/work
+    /cenzor cenzor.component
+    /tasklist tasklist.component
+    /userlist userlist.component

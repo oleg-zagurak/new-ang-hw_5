@@ -1,0 +1,12 @@
+<div class="container">
+    <header class="header">
+        <p class="info">Count of task: {{amount}}</p>
+    </header>
+    <main class="main">
+        <div class="input-container">
+            <input type="text" class="input" #name>
+            <button class="btn" (click)="createTask(name.value); name.value=''">Add</button>
+        </div>
+        <app-tasks-table [newTask]="task" (taskCount)="setAmount($event)"></app-tasks-table>
+    </main>
+</div>

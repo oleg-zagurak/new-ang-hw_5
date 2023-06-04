@@ -1,0 +1,12 @@
+<div class="main">
+  <div class="container">
+    <p>Bad words: <span>{{badWords.join(' ')}}</span></p>
+    <div class="input-box">
+      <input type="text" [placeholder]="inputPlaceholder" [(ngModel)]="input" [id]="inputIsEmpty">
+      <button class="btn btn-add" (click)="adding()">Add</button>
+      <button class="btn btn-res" (click)="reset()">Reset</button>
+    </div>
+    <textarea [placeholder]="areaPlaceholder" [(ngModel)]="area" [id]="areaIsEmpty"></textarea>
+    <button class="btn btn-cenz" (click)="cenzor()">Cenzor</button>
+  </div>
+</div>

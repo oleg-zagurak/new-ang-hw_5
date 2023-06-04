@@ -1,0 +1,34 @@
+<main>
+    <div class="container">
+      <form>
+        <p class="text">Login</p>
+        <input type="text" name="login" id="login" placeholder="Enter login" [(ngModel)]="login">
+        <p class="text">Password</p>
+        <input type="password" name="password" id="password" placeholder="Enter password" [(ngModel)]="password">
+        <p class="text">Email address</p>
+        <input type="email" name="email" id="email" placeholder="Enter email" [(ngModel)]="email">
+        <button class="btn btn-add" *ngIf="!editStatus" (click)="addUser()">Add user</button>
+        <button class="btn btn-save"*ngIf="editStatus" (click)="saveEditUser()">Save edit user</button>
+      </form>
+      <div class="table">
+        <div class="table-columns">
+          <div class="cell">#</div>
+          <div class="cell">Login</div>
+          <div class="cell">Password</div>
+          <div class="cell">Email</div>
+          <div class="cell ">Edit</div>
+          <div class="cell">Delete</div>
+        </div>
+        <div class="table-body" *ngIf="userList">
+          <div class="table-row" *ngFor="let user of userList; let i = index">
+            <div class="cell">{{ i + 1 }}</div>
+            <div class="cell">{{user.login}}</div>
+            <div class="cell">{{user.password}}</div>
+            <div class="cell">{{user.email}}</div>
+            <div class="cell"><button class="btn btn-edit" (click)="editUser(i)">Edit</button></div>
+            <div class="cell"><button class="btn btn-del" (click)="delete(i)" [disabled]="editStatus">Delete</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
